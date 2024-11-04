@@ -4,8 +4,6 @@
 
 The **Mini Perplexity System** is a web application built with React that provides users with quick, summarized answers to their questions. It uses the Google Custom Search API to gather relevant search results and the Hugging Face API to summarize these results into concise answers. Additionally, the application displays source links for each answer, allowing users to delve deeper into the original content.
 
-This project is designed as a lightweight, efficient Q&A system for users who seek straightforward answers and reliable sources, improving accessibility to accurate information in a user-friendly interface.
-
 ## Objectives
 
 - Enable users to obtain summarized answers to their questions quickly.
@@ -80,10 +78,9 @@ To run this project locally, follow these steps:
 The application is deployed on Vercel. You can access the live version here: [Mini Perplexity System](https://mini-perplexity-tu5c.vercel.app/)
 
 **Deployment Steps:**
-1. Ensure the `.env` file is created with the required API keys using the `setup.sh` script.
-2. Deploy the project by linking your GitHub repository to Vercel.
-3. Configure the environment variables in the Vercel dashboard with your API keys.
-4. Deploy and access the live application using the generated Vercel URL.
+1. Deployed the project by linking GitHub repository to Vercel.
+2. Configured the environment variables in the Vercel dashboard with API keys.
+3. Deployed and access the live application using the generated Vercel URL.
 
 ## Usage
 
@@ -95,7 +92,7 @@ The application is deployed on Vercel. You can access the live version here: [Mi
 ### Example Interaction
 
 - **Question**: "What is the capital of France?"
-- **Generated Answer**: "The capital of France is Paris."
+- **Generated Answer**: "Paris Paris is the capital and most populous city of France...... ."
 - **Source Links**: Links to websites that provide more information on Paris.
 
 ## Design Decisions, Challenges, and Solutions
