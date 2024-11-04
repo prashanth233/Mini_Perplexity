@@ -2,47 +2,124 @@
 
 ## Overview
 
-The **Mini Perplexity System** is a React-based web application that allows users to search for answers to their questions. It leverages the Google Custom Search API to retrieve relevant search results and uses the Hugging Face API to generate concise answers from those results. This application is designed to provide quick and informative responses, along with source links for further reading.
+The **Mini Perplexity System** is a web application built with React that provides users with quick, summarized answers to their questions. It uses the Google Custom Search API to gather relevant search results and the Hugging Face API to summarize these results into concise answers. Additionally, the application displays source links for each answer, allowing users to delve deeper into the original content.
+
+This project is designed as a lightweight, efficient Q&A system for users who seek straightforward answers and reliable sources, improving accessibility to accurate information in a user-friendly interface.
+
+## Objectives
+
+- Enable users to obtain summarized answers to their questions quickly.
+- Provide reliable source links for further reading and verification.
+- Reduce API call volume by caching repeated queries.
+- Offer a minimalistic and intuitive interface.
 
 ## Features
 
-- **Search Functionality**: Users can input their questions, and the system will fetch relevant results from Google.
-- **Answer Generation**: The application utilizes the Hugging Face API to generate a summarized answer based on the search results.
-- **Source Links**: The application displays links to the sources from which the answers are derived.
-- **Caching**: Previously searched queries are cached to improve performance and reduce API calls.
+- **Search Functionality**: Users input questions, and the system fetches relevant web results using Google Custom Search.
+- **Answer Generation**: Uses the Hugging Face API to generate a concise summary of the search results.
+- **Source Links**: Displays clickable source links to direct users to the original content.
+- **Caching**: Reduces repeated API calls and enhances performance by caching frequently searched queries.
 
 ## Technologies Used
 
-- **React**: A JavaScript library for building user interfaces.
-- **Google Custom Search API**: Used to fetch search results based on user queries.
-- **Hugging Face API**: Utilized to generate answers from the search results.
-- **CSS**: For styling the application.
+- **React**: For building and structuring the user interface.
+- **Google Custom Search API**: Fetches relevant web content based on user queries.
+- **Hugging Face API**: Summarizes the retrieved content into concise answers.
+- **CSS**: Provides a simple, clean, and responsive layout.
 
-## Installation
+## Setup and Installation
 
 To run this project locally, follow these steps:
 
-1. Clone the repository:
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/prashanth233/Mini_Perplexity.git
    cd Mini_Perplexity
    ```
 
-2. Install the dependencies:
+2. **Install dependencies:**
 
    ```bash
    npm install
    ```
-   
-3. Start the application:
+
+3. **Set up environment variables**: You can use the provided `setup.sh` script to create the `.env` file automatically.
+
+   ### For Mac/Linux:
+
+   - Make the script executable:
+
+     ```bash
+     chmod +x setup.sh
+     ```
+
+   - Run the script:
+
+     ```bash
+     ./setup.sh
+     ```
+
+   ### For Windows:
+
+   - Open a terminal (e.g., Command Prompt or PowerShell) in the project directory.
+   - Run the script using Git Bash (if installed) or use the following command in PowerShell:
+
+     ```powershell
+     bash setup.sh
+     ```
+
+4. **Start the application:**
 
    ```bash
    npm start
    ```
 
+## Deployment
+
+The application is deployed on Vercel. You can access the live version here: [Mini Perplexity System](https://mini-perplexity-tu5c.vercel.app/)
+
+**Deployment Steps:**
+1. Ensure the `.env` file is created with the required API keys using the `setup.sh` script.
+2. Deploy the project by linking your GitHub repository to Vercel.
+3. Configure the environment variables in the Vercel dashboard with your API keys.
+4. Deploy and access the live application using the generated Vercel URL.
+
 ## Usage
 
 1. Open the application in your web browser.
-2. Type your question in the input field and click the "Search" button.
-3. The application will display the generated answer along with source links for reference.
+2. Enter a question in the search input field.
+3. Click "Search" to fetch the answer.
+4. The app displays a summarized answer along with source links for more detailed reading.
+
+### Example Interaction
+
+- **Question**: "What is the capital of France?"
+- **Generated Answer**: "The capital of France is Paris."
+- **Source Links**: Links to websites that provide more information on Paris.
+
+## Design Decisions, Challenges, and Solutions
+
+### Design Decisions
+
+- **Simple UI**: The interface was kept minimalistic for ease of use, focusing on accessibility and readability.
+- **Answer and Source Display**: Separating the answer and source sections makes it easier for users to locate additional information quickly.
+- **Caching**: Adding a caching mechanism reduces response time and API usage.
+
+### Challenges
+
+- **API Limitations**: Both Google Custom Search and Hugging Face APIs have rate limits. This was mitigated by implementing caching to minimize redundant API calls.
+- **Result Quality**: Not all Google search results are directly relevant to the user query, which can lead to unsatisfactory answers. This was partially addressed by limiting the length of the summary input to Hugging Face, focusing on the most relevant snippets.
+
+### Solutions
+
+- **Caching Optimization**: Using a Map for caching queries ensures that repeated searches return instantly, enhancing the user experience and reducing API costs.
+- **Source Linking**: To provide better context, the app includes links to the original Google search results.
+
+## Future Improvements
+
+- **Improved Answer Filtering**: Enhance the summarization process to better prioritize highly relevant snippets.
+- **Error Handling**: Develop more comprehensive error messages and logging to capture different API response errors.
+- **Additional APIs**: Integrate alternative search APIs to improve result diversity and accuracy.
+- **UI Enhancements**: Add loading animations and dynamic feedback to improve the user experience during data fetches.
+- **Pagination for Sources**: Implement pagination for source links when there are more than a few relevant results.
