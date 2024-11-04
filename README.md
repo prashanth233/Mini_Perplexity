@@ -75,6 +75,7 @@ To run this project locally, follow these steps:
 ## Deployment
 
 The application is deployed on Vercel. You can access the live version here: [Mini Perplexity System](https://mini-perplexity-tu5c.vercel.app/)
+
 Note: If you encounter an error stating "could not generate answer," try reloading the app, and it should work.
 
 **Deployment Steps:**
