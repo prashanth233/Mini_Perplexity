@@ -60,7 +60,6 @@ To run this project locally, follow these steps:
 
    ### For Windows:
 
-   - Open a terminal (e.g., Command Prompt or PowerShell) in the project directory.
    - Run the script using Git Bash (if installed) or use the following command in PowerShell:
 
      ```powershell
